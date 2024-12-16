@@ -1,10 +1,10 @@
 import { Router } from "express";
+import { getSetting, updateSetting } from "../controllers/settings.controller";
 
+const router = Router();
 
-const router = Router()
+router.post("/", updateSetting);
 
-router.post('/',()=>{})
+router.get("/", getSetting);
 
-router.get('/',()=>{})
-
-export default router
+export default router;
