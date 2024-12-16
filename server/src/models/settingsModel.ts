@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-const settingSchema = new Schema({
+export const settingSchema = new Schema({
   date: {
     type: Date,
     default: Date.now,
@@ -30,5 +30,4 @@ const settingSchema = new Schema({
     default: 0,
   },
 });
-export type Setting = ReturnType<() => typeof settingSchema>
 const SettingsModel = model("Settings", settingSchema);
