@@ -11,7 +11,9 @@ app.use('/api/expense',expenseRouter)
 app.use('/api/settings',settingRouter)
 
 // Erroe handling 
-app.use(async (req:Request,res:Response) => {})
+app.use(async (req:Request,res:Response) => {
+    
+})
 
 app.listen(3000,()=>{
     console.log(`[server] I'm up on port 3000`)
