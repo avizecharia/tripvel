@@ -3,7 +3,7 @@ import { Setting } from "../types/models";
 
 export const getSettings = async () => {
   try {
-    const setting = await SettingsModel.findOne({}).lean();
+    return await SettingsModel.findOne({}).lean();
   } catch (err) {
     console.error(err);
     throw err;
@@ -11,7 +11,7 @@ export const getSettings = async () => {
 };
 export const patchSettings = async (newSettings: Setting) => {
   try {
-    return await SettingsModel.findOneAndUpdate({}, { $set: newSettings }).lean();
+    return await SettingsModel.findOneAndUpdate({}, { $set: newSettings },{new:true}).lean();
   } catch (err) {
     console.error(err);
     throw err;

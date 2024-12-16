@@ -6,9 +6,9 @@ export default function Navbar() {
     const openBtn = <Hamburger onClick={()=>setIsOpen(!isOpen)}/>
   return (<>
   {!isOpen && openBtn}
-    <NavDrawer open={isOpen}>
+    <NavDrawer  open={isOpen}>
         {openBtn}
-        {pages.map(page => <NavItem href={'/'+ page.path} value={page.path}>{page.display}</NavItem>)}
+        {pages.map(page => <NavItem key={page.path} href={'/'+ page.path} value={page.path}>{page.display}</NavItem>)}
     </NavDrawer>
   </>
   )
