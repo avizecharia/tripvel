@@ -2,8 +2,9 @@ import express, { Request, Response } from 'express'
 import cors from 'cors'
 import expenseRouter  from './routes/expense.route'
 import settingRouter  from './routes/settings.route'
+import { connectToMongo } from './config/db'
 const app = express()
-
+connectToMongo()
 app.use(cors())
 app.use(express.json())
 
@@ -12,7 +13,7 @@ app.use('/api/settings',settingRouter)
 
 // Erroe handling 
 app.use(async (req:Request,res:Response) => {
-    
+
 })
 
 app.listen(3000,()=>{
