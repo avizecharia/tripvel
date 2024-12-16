@@ -27,4 +27,4 @@ export const daySchema = new Schema ({
   },
 })
 
-const DayModel = model('day' , daySchema)
+export const DayModel = model('day' , daySchema)

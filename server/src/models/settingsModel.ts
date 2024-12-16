@@ -30,4 +30,4 @@ export const settingSchema = new Schema({
     default: 0,
   },
 });
-const SettingsModel = model("Settings", settingSchema);
+export const SettingsModel = model("Settings", settingSchema);

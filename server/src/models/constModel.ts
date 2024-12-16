@@ -6,4 +6,4 @@ export const constSchema = new Schema ({
 
 },{timestamps:true}
 )
-const ConstModel = model('Const' , constSchema)
+export const ConstModel = model('Const' , constSchema)
