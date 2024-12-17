@@ -1,6 +1,7 @@
 import { Button, Input, Label, Spinner, Text } from "@fluentui/react-components";
 import { expenseCategories } from "../../types/expenseCategories";
 import { FormEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -14,11 +15,13 @@ export default function Settings() {
     });
     const data = await res.json()
     setState(data)
+    navigate('/')
     setIsLoading(false)
     e.preventDefault();
   };
   const [state, setState] = useState<{ [key: string]: number }>({});
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate()
   const handelChange = (key: string, value: number) => {
     setState({ ...state, [key]: value });
   };
@@ -29,6 +32,7 @@ export default function Settings() {
       setState(data);
       setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.log(error)
     }
   };
@@ -42,7 +46,7 @@ export default function Settings() {
     </div>
   ) : (
     <div>
-      <Text align="center" weight="bold" style={{margin:"1em"}} >Settings</Text>
+      <Text  weight="bold" style={{margin:"1em"}} >Settings</Text>
       <form onSubmit={handelSubmit}>
         {/* <Text as="h1">Settings</Text> */}
         <div
