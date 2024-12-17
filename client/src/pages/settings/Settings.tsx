@@ -42,8 +42,9 @@ export default function Settings() {
     </div>
   ) : (
     <div>
+      <Text align="center" weight="bold" style={{margin:"1em"}} >Settings</Text>
       <form onSubmit={handelSubmit}>
-        <Text as="h1">Settings</Text>
+        {/* <Text as="h1">Settings</Text> */}
         <div
           style={{
             display: "flex",
@@ -84,7 +85,7 @@ export default function Settings() {
           </div>
         ))}
       </form>
-      <Button appearance="primary" type="submit" onClick={(e) => handelSubmit(e)}>Save</Button>
+      <Button style={{margin:"1em"}} appearance="primary" type="submit" onClick={(e) => handelSubmit(e)}>Save</Button>
     </div>
   );
 }
